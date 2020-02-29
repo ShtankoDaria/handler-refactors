@@ -29,7 +29,8 @@
     ];
 
     function generateSearchURL(searchQuery) { 
-   
+    const encodedQuery = encodeURIComponent(userInput);
+      const searchQuery = 'https://duckduckgo.com/?q=' + encodedQuery;
     }
 
     testing(generateSearchURL, generateSearchURLTests);
@@ -42,8 +43,7 @@
       const userInput = form.query.value;
 
       // execute core logic
-      const encodedQuery = encodeURIComponent(userInput);
-      const searchURL = 'https://duckduckgo.com/?q=' + encodedQuery;
+     const searchURL = searchQuery;
 
       // communicate result to user
       window.open(searchURL, '_blank');
